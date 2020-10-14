@@ -129,9 +129,7 @@ class EasyListPAC:
         fanboy_antifacebook_url = 'https://raw.githubusercontent.com/ryanbr/fanboy-adblock/master/fanboy-antifacebook.txt'
         fanboy_cookiemonster_url = 'https://raw.githubusercontent.com/ryanbr/fanboy-adblock/master/fanboy-cookiemonster.txt'
         fanboy_problematic_sites_url = 'https://raw.githubusercontent.com/ryanbr/fanboy-adblock/master/fanboy-problematic-sites.txt'
-        urlhaus_url = 'https://curben.gitlab.io/malware-filter/urlhaus-filter-ag.txt'
-        mvps_url = 'https://winhelp2002.mvps.org/hosts.txt'
-        self.download_list = [mvps_url, urlhaus_url, fanboy_problematic_sites_url, fanboy_cookiemonster_url, fanboy_antifacebook_url, fanboy_anticomments_url, malware_domains_url, antiadblock_url, fanboy_social_url, fanboy_annoyance_url, easyprivacy_url, easylist_url] + self.extra_easylist_urls
+        self.download_list = [fanboy_problematic_sites_url, fanboy_cookiemonster_url, fanboy_antifacebook_url, fanboy_anticomments_url, malware_domains_url, antiadblock_url, fanboy_social_url, fanboy_annoyance_url, easyprivacy_url, easylist_url] + self.extra_easylist_urls
         self.file_list = []
         for url in self.download_list:
             fname = os.path.basename(url)
