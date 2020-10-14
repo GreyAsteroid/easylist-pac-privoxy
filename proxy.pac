@@ -213,9 +213,6 @@ var good_da_host_JSON = { "apple.com": null,
 "mozilla.org": null };
 var good_da_host_exact_flag = 110 > 0 ? true : false;  // test for non-zero number of rules
     
-// 4 rules as an efficient NFA RegExp:
-var good_da_host_RegExp = /^(?:[\w-]+\.)*?(?:^(?:[\w-]+\.)*?push\.apple\.com[^\w.%-]|^(?:[\w-]+\.)*?itunes\.apple\.com[^\w.%-]|^(?:[\w-]+\.)*?apps\.apple\.com[^\w.%-]|^(?:[\w-]+\.)*?mzstatic\.com[^\w.%-])/i;
-var good_da_host_regex_flag = 4 > 0 ? true : false;  // test for non-zero number of rules
 
 // 0 rules:
 var good_da_hostpath_JSON = {  };
