@@ -92,12 +92,12 @@ class EasyListPAC:
         parser.add_argument('-rg', '--good-rule-max', help="Maximum number of good rules (-1 for unlimited)",
                             type=int, default=1099)
         parser.add_argument('-th', '--truncate_hash', help="Truncate hash object length to maximum number", type=int,
-                            default=3999)
+                            default=9999999999)
         parser.add_argument('-tr', '--truncate_regex', help="Truncate regex rules to maximum number", type=int,
-                            default=499)
+                            default=9999999999)
         parser.add_argument('-w', '--sliding-window', help="Sliding window training and test (slow)", action='store_true')
         parser.add_argument('-x', '--Extra_EasyList_URLs', help="Extra Easylsit URLs", type=str, nargs='+', default=[])
-        parser.add_argument('-*', '--wildcard-limit', help="Limit the number of wildcards", type=int, default=999)
+        parser.add_argument('-*', '--wildcard-limit', help="Limit the number of wildcards", type=int, default=9999999999)
         parser.add_argument('-@@', '--exceptions_include_flag', help="Include exception rules", action='store_true')
         args = parser.parse_args()
         self.args = parser.parse_args()
@@ -123,7 +123,15 @@ class EasyListPAC:
         easyprivacy_url = 'https://easylist.to/easylist/easyprivacy.txt'
         fanboy_social_url = 'https://easylist.to/easylist/fanboy-social.txt'
         fanboy_annoyance_url = 'https://easylist.to/easylist/fanboy-annoyance.txt'
-        self.download_list = [fanboy_social_url, fanboy_annoyance_url, easyprivacy_url, easylist_url] + self.extra_easylist_urls
+        antiadblock_url = 'https://easylist-downloads.adblockplus.org/antiadblockfilters.txt'
+        malware_domains_url = 'https://easylist-downloads.adblockplus.org/malwaredomains_full.txt'
+        fanboy_anticomments_url = 'https://raw.githubusercontent.com/ryanbr/fanboy-adblock/master/fanboy-anticomments.txt'
+        fanboy_antifacebook_url = 'https://raw.githubusercontent.com/ryanbr/fanboy-adblock/master/fanboy-antifacebook.txt'
+        fanboy_cookiemonster_url = 'https://raw.githubusercontent.com/ryanbr/fanboy-adblock/master/fanboy-cookiemonster.txt'
+        fanboy_problematic_sites_url = 'https://raw.githubusercontent.com/ryanbr/fanboy-adblock/master/fanboy-problematic-sites.txt'
+        urlhaus_url = 'https://curben.gitlab.io/malware-filter/urlhaus-filter-ag.txt'
+        mvps_url = 'https://winhelp2002.mvps.org/hosts.txt'
+        self.download_list = [mvps_url, urlhaus_url, fanboy_problematic_sites_url, fanboy_cookiemonster_url, fanboy_antifacebook_url, fanboy_anticomments_url, malware_domains_url, antiadblock_url, fanboy_social_url, fanboy_annoyance_url, easyprivacy_url, easylist_url] + self.extra_easylist_urls
         self.file_list = []
         for url in self.download_list:
             fname = os.path.basename(url)
@@ -1704,65 +1712,6 @@ good_da_host_exceptions_exact = [ 'iad.apple.com',
 
 # ignore any rules following comments with these strings, until the next non-ignorable comment
 commentname_sections_ignore_re = r'(?:{})'.format('|'.join(re.sub(r'([.])','\\.',x) for x in '''\
-gizmodo.in
-shink.in
-project-free-tv.li
-vshare.eu
-pencurimovie.ph
-filmlinks4u.is
-Spiegel.de
-bento.de
-German
-French
-Arabic
-Armenian
-Belarusian
-Bulgarian
-Chinese
-Croatian
-Czech
-Danish
-Dutch
-Estonian
-Finnish
-Georgian
-Greek
-Hebrew
-Hungarian
-Icelandic
-Indian
-Indonesian
-Italian
-Japanese
-Korean
-Latvian
-Lithuanian
-Norwegian
-Persian
-Polish
-Portuguese
-Romanian
-Russian
-Serbian
-Singaporean
-Slovene
-Slovak
-Spanish
-Swedish
-Thai
-Turkish
-Ukranian
-Ukrainian
-Vietnamese
-Gamestar.de
-Focus.de
-tvspielfilm.de
-Prosieben
-Wetter.com
-Woxikon.de
-Fanfiktion.de
-boote-forum.de
-comunio.de
 planetsnow.de'''.split('\n')))
 
 # include these rules, no matter their priority
