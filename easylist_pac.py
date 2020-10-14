@@ -121,15 +121,11 @@ class EasyListPAC:
     def easylists_download_latest(self):
         easylist_url = 'https://easylist.to/easylist/easylist.txt'
         easyprivacy_url = 'https://easylist.to/easylist/easyprivacy.txt'
+        easycookie_url = 'https://easylist-downloads.adblockplus.org/easylist-cookie.txt'
         fanboy_social_url = 'https://easylist.to/easylist/fanboy-social.txt'
         fanboy_annoyance_url = 'https://easylist.to/easylist/fanboy-annoyance.txt'
         antiadblock_url = 'https://easylist-downloads.adblockplus.org/antiadblockfilters.txt'
-        malware_domains_url = 'https://easylist-downloads.adblockplus.org/malwaredomains_full.txt'
-        fanboy_anticomments_url = 'https://raw.githubusercontent.com/ryanbr/fanboy-adblock/master/fanboy-anticomments.txt'
-        fanboy_antifacebook_url = 'https://raw.githubusercontent.com/ryanbr/fanboy-adblock/master/fanboy-antifacebook.txt'
-        fanboy_cookiemonster_url = 'https://raw.githubusercontent.com/ryanbr/fanboy-adblock/master/fanboy-cookiemonster.txt'
-        fanboy_problematic_sites_url = 'https://raw.githubusercontent.com/ryanbr/fanboy-adblock/master/fanboy-problematic-sites.txt'
-        self.download_list = [fanboy_problematic_sites_url, fanboy_cookiemonster_url, fanboy_antifacebook_url, fanboy_anticomments_url, malware_domains_url, antiadblock_url, fanboy_social_url, fanboy_annoyance_url, easyprivacy_url, easylist_url] + self.extra_easylist_urls
+        self.download_list = [easycookie_url, antiadblock_url, fanboy_social_url, fanboy_annoyance_url, easyprivacy_url, easylist_url] + self.extra_easylist_urls
         self.file_list = []
         for url in self.download_list:
             fname = os.path.basename(url)
