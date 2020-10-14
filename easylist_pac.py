@@ -92,9 +92,9 @@ class EasyListPAC:
         parser.add_argument('-rg', '--good-rule-max', help="Maximum number of good rules (-1 for unlimited)",
                             type=int, default=1099)
         parser.add_argument('-th', '--truncate_hash', help="Truncate hash object length to maximum number", type=int,
-                            default=3999)
+                            default=9999)
         parser.add_argument('-tr', '--truncate_regex', help="Truncate regex rules to maximum number", type=int,
-                            default=499)
+                            default=99999)
         parser.add_argument('-w', '--sliding-window', help="Sliding window training and test (slow)", action='store_true')
         parser.add_argument('-x', '--Extra_EasyList_URLs', help="Extra Easylsit URLs", type=str, nargs='+', default=[])
         parser.add_argument('-*', '--wildcard-limit', help="Limit the number of wildcards", type=int, default=999)
@@ -124,7 +124,10 @@ class EasyListPAC:
         easycookie_url = 'https://easylist-downloads.adblockplus.org/easylist-cookie.txt'
         fanboy_annoyance_url = 'https://easylist.to/easylist/fanboy-annoyance.txt'
         antiadblock_url = 'https://easylist-downloads.adblockplus.org/antiadblockfilters.txt'
-        self.download_list = [easycookie_url, antiadblock_url, fanboy_annoyance_url, easyprivacy_url, easylist_url] + self.extra_easylist_urls
+        twoeightyblocker_url = 'https://280blocker.net/files/280blocker_adblock.txt'
+        abp_url = 'https://raw.githubusercontent.com/k2jp/abp-japanese-filters/master/abpjf.txt'
+        youslist_url = 'https://raw.githubusercontent.com/yous/YousList/master/youslist.txt'
+        self.download_list = [youslist_url, abp_url, twoeightyblocker_url, easycookie_url, antiadblock_url, fanboy_annoyance_url, easyprivacy_url, easylist_url] + self.extra_easylist_urls
         self.file_list = []
         for url in self.download_list:
             fname = os.path.basename(url)
