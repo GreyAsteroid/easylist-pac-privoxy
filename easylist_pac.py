@@ -125,7 +125,8 @@ class EasyListPAC:
         fanboy_social_url = 'https://easylist.to/easylist/fanboy-social.txt'
         fanboy_annoyance_url = 'https://easylist.to/easylist/fanboy-annoyance.txt'
         antiadblock_url = 'https://easylist-downloads.adblockplus.org/antiadblockfilters.txt'
-        self.download_list = [easycookie_url, antiadblock_url, fanboy_social_url, fanboy_annoyance_url, easyprivacy_url, easylist_url] + self.extra_easylist_urls
+        adguard_dns_url = 'https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt'
+        self.download_list = [adguard_dns_url, easycookie_url, antiadblock_url, fanboy_social_url, fanboy_annoyance_url, easyprivacy_url, easylist_url] + self.extra_easylist_urls
         self.file_list = []
         for url in self.download_list:
             fname = os.path.basename(url)
