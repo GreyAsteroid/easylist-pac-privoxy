@@ -124,10 +124,11 @@ class EasyListPAC:
         easycookie_url = 'https://easylist-downloads.adblockplus.org/easylist-cookie.txt'
         fanboy_annoyance_url = 'https://easylist.to/easylist/fanboy-annoyance.txt'
         antiadblock_url = 'https://easylist-downloads.adblockplus.org/antiadblockfilters.txt'
-        twoeightyblocker_url = 'https://280blocker.net/files/280blocker_adblock.txt'
-        abp_url = 'https://raw.githubusercontent.com/k2jp/abp-japanese-filters/master/abpjf.txt'
-        youslist_url = 'https://raw.githubusercontent.com/yous/YousList/master/youslist.txt'
-        self.download_list = [youslist_url, abp_url, twoeightyblocker_url, easycookie_url, antiadblock_url, fanboy_annoyance_url, easyprivacy_url, easylist_url] + self.extra_easylist_urls
+        mochifilter_url = 'https://raw.githubusercontent.com/eEIi0A5L/adblock_filter/master/mochi_filter.txt'
+        mochitwogun_url = 'https://raw.githubusercontent.com/eEIi0A5L/adblock_filter/master/mochi_filter_2gun.txt'
+        mochiextended_url = 'https://raw.githubusercontent.com/eEIi0A5L/adblock_filter/master/mochi_filter_extended.txt'
+        mochiamazon_url = 'https://raw.githubusercontent.com/eEIi0A5L/adblock_filter/master/mochi_filter_amazon.txt'
+        self.download_list = [mochifilter_url, mochitwogun_url, mochiextended_url, mochiamazon_url, easycookie_url, antiadblock_url, fanboy_annoyance_url, easyprivacy_url, easylist_url] + self.extra_easylist_urls
         self.file_list = []
         for url in self.download_list:
             fname = os.path.basename(url)
