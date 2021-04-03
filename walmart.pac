@@ -3,7 +3,7 @@
 // Copyright (C) 2017 by Steven T. Smith <steve dot t dot smith at gmail dot com>, GPL
 // https://github.com/essandess/easylist-pac-privoxy/
 //
-// PAC file created on Sat, 03 Apr 2021 02:53:22 GMT
+// PAC file created on Sat, 03 Apr 2021 03:03:40 GMT
 // Created with command: easylist_pac.py
 //
 // http://www.gnu.org/licenses/lgpl.txt
@@ -100,13 +100,122 @@ var blackhole = "PROXY " + blackhole_ip_port;
 // bad_da_host_exact == bad domain anchor with host/path type, exact matching with Object hash
 // bad_da_host_regex == bad domain anchor with host/path type, RegExp matching
 // 
-// 0 rules:
-var good_da_host_exact_JSON = {  };
-var good_da_host_exact_flag = 0 > 0 ? true : false;  // test for non-zero number of rules
+// 110 rules:
+var good_da_host_exact_JSON = { "apple.com": null,
+"albert.apple.com": null,
+"captive.apple.com": null,
+"gs.apple.com": null,
+"humb.apple.com": null,
+"static.ips.apple.com": null,
+"tbsc.apple.com": null,
+"time-ios.apple.com": null,
+"time.apple.com": null,
+"time-macos.apple.com": null,
+"gdmf.apple.com": null,
+"deviceenrollment.apple.com": null,
+"deviceservices-external.apple.com": null,
+"identity.apple.com": null,
+"iprofiles.apple.com": null,
+"mdmenrollment.apple.com": null,
+"setup.icloud.com": null,
+"appldnld.apple.com": null,
+"gg.apple.com": null,
+"gnf-mdn.apple.com": null,
+"gnf-mr.apple.com": null,
+"ig.apple.com": null,
+"mesu.apple.com": null,
+"oscdn.apple.com": null,
+"osrecovery.apple.com": null,
+"skl.apple.com": null,
+"swcdn.apple.com": null,
+"swdist.apple.com": null,
+"swdownload.apple.com": null,
+"swpost.apple.com": null,
+"swscan.apple.com": null,
+"updates-http.cdn-apple.com": null,
+"updates.cdn-apple.com": null,
+"xp.apple.com": null,
+"ppq.apple.com": null,
+"lcdn-registration.apple.com": null,
+"crl.apple.com": null,
+"crl.entrust.net": null,
+"crl3.digicert.com": null,
+"crl4.digicert.com": null,
+"ocsp.apple.com": null,
+"ocsp.digicert.com": null,
+"ocsp.entrust.net": null,
+"ocsp.verisign.net": null,
+"icloud.com": null,
+"apple-dns.net": null,
+"init.itunes.apple.com": null,
+"init-cdn.itunes-apple.com.akadns.net": null,
+"itunes.apple.com.edgekey.net": null,
+"p32-escrowproxy.icloud.com": null,
+"p32-escrowproxy.fe.apple-dns.net": null,
+"keyvalueservice.icloud.com": null,
+"keyvalueservice.fe.apple-dns.net": null,
+"p32-bookmarks.icloud.com": null,
+"p32-bookmarks.fe.apple-dns.net": null,
+"p32-ckdatabase.icloud.com": null,
+"p32-ckdatabase.fe.apple-dns.net": null,
+"configuration.apple.com": null,
+"configuration.apple.com.edgekey.net": null,
+"mesu-cdn.apple.com.akadns.net": null,
+"mesu.g.aaplimg.com": null,
+"gspe1-ssl.ls.apple.com": null,
+"gspe1-ssl.ls.apple.com.edgekey.net": null,
+"api-glb-bos.smoot.apple.com": null,
+"query.ess.apple.com": null,
+"query-geo.ess-apple.com.akadns.net": null,
+"query.ess-apple.com.akadns.net": null,
+"setup.fe.apple-dns.net": null,
+"gsa.apple.com": null,
+"gsa.apple.com.akadns.net": null,
+"icloud-content.com": null,
+"usbos-edge.icloud-content.com": null,
+"usbos.ce.apple-dns.net": null,
+"lcdn-locator.apple.com": null,
+"lcdn-locator.apple.com.akadns.net": null,
+"lcdn-locator-usuqo.apple.com.akadns.net": null,
+"cl1.apple.com": null,
+"cl2.apple.com": null,
+"cl3.apple.com": null,
+"cl4.apple.com": null,
+"cl5.apple.com": null,
+"cl1-cdn.origin-apple.com.akadns.net": null,
+"cl2-cdn.origin-apple.com.akadns.net": null,
+"cl3-cdn.origin-apple.com.akadns.net": null,
+"cl4-cdn.origin-apple.com.akadns.net": null,
+"cl5-cdn.origin-apple.com.akadns.net": null,
+"cl1.apple.com.edgekey.net": null,
+"cl2.apple.com.edgekey.net": null,
+"cl3.apple.com.edgekey.net": null,
+"cl4.apple.com.edgekey.net": null,
+"cl5.apple.com.edgekey.net": null,
+"xp.itunes-apple.com.akadns.net": null,
+"mt-ingestion-service-pv.itunes.apple.com": null,
+"p32-sharedstreams.icloud.com": null,
+"p32-sharedstreams.fe.apple-dns.net": null,
+"p32-fmip.icloud.com": null,
+"p32-fmip.fe.apple-dns.net": null,
+"gsp-ssl.ls.apple.com": null,
+"gsp-ssl.ls-apple.com.akadns.net": null,
+"gsp-ssl.ls2-apple.com.akadns.net": null,
+"gspe35-ssl.ls.apple.com": null,
+"gspe35-ssl.ls-apple.com.akadns.net": null,
+"gspe35-ssl.ls.apple.com.edgekey.net": null,
+"gsp64-ssl.ls.apple.com": null,
+"gsp64-ssl.ls-apple.com.akadns.net": null,
+"mt-ingestion-service-st11.itunes.apple.com": null,
+"mt-ingestion-service-st11.itunes-apple.com.akadns.net": null,
+"microsoft.com": null,
+"mozilla.com": null,
+"mozilla.org": null };
+var good_da_host_exact_flag = 110 > 0 ? true : false;  // test for non-zero number of rules
     
-// 0 rules as an efficient NFA RegExp:
-var good_da_host_regex_RegExp = /^$/;
-var good_da_host_regex_flag = 0 > 0 ? true : false;  // test for non-zero number of rules
+// 4 rules as an efficient NFA RegExp:
+var good_da_host_regex_RegExp = /^(?:[\w-]+\.)*?(?:^(?:[\w-]+\.)*?push\.apple\.com[^\w.%-]|^(?:[\w-]+\.)*?itunes\.apple\.com[^\w.%-]|^(?:[\w-]+\.)*?apps\.apple\.com[^\w.%-]|^(?:[\w-]+\.)*?mzstatic\.com[^\w.%-])/i;
+var good_da_host_regex_flag = 4 > 0 ? true : false;  // test for non-zero number of rules
 
 // 0 rules:
 var good_da_hostpath_exact_JSON = {  };
@@ -166,7 +275,23 @@ var bad_url_regex_flag = 0 > 0 ? true : false;  // test for non-zero number of r
 // optional white space, and then the netmask.
 // LAN, loopback, Apple (direct and Akamai e.g. e4805.a.akamaiedge.net), Microsoft (updates and services)
 // Apple Enterprise Network; https://support.apple.com/en-us/HT210060
-var GoodNetworks_Array = [];
+var GoodNetworks_Array = [ "10.0.0.0,     255.0.0.0",
+"172.16.0.0,        255.240.0.0",
+"17.248.128.0,      255.255.192.0",
+"17.250.64.0,       255.255.192.0",
+"17.248.192.0,      255.255.224.0",
+"192.168.0.0,       255.255.0.0",
+"127.0.0.0,         255.0.0.0",
+"17.0.0.0,          255.0.0.0",
+"23.2.8.68,         255.255.255.255",
+"23.2.145.78,       255.255.255.255",
+"23.39.179.17,      255.255.255.255",
+"23.63.98.0,        255.255.254.0",
+"104.70.71.223,     255.255.255.255",
+"104.73.77.224,     255.255.255.255",
+"104.96.184.235,    255.255.255.255",
+"104.96.188.194,    255.255.255.255",
+"65.52.0.0,         255.255.252.0" ];
 
 // Apple iAd, Microsoft telemetry
 var GoodNetworks_Exceptions_Array = [];
